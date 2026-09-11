@@ -11,7 +11,7 @@ function createWindow() {
     autoHideMenuBar: true,
   });
 
-  // 👇 Ye rahi aapki nayi working link (No 404 Error)
+  // URL Fix (No 404 Error)
   mainWindow.loadURL('https://rgamerai.vercel.app');
 
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
@@ -21,7 +21,6 @@ function createWindow() {
 }
 
 app.whenReady().then(createWindow);
-
 app.on('window-all-closed', () => { 
   if (process.platform !== 'darwin') app.quit(); 
 });
