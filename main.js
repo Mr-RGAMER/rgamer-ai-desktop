@@ -2,10 +2,16 @@ const { app, BrowserWindow, shell } = require('electron');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    width: 1200, height: 800, minWidth: 800, minHeight: 600,
-    title: "RGAMER AI", backgroundColor: "#0e0e11", autoHideMenuBar: true,
+    width: 1200, 
+    height: 800, 
+    minWidth: 800, 
+    minHeight: 600,
+    title: "RGAMER AI", 
+    backgroundColor: "#0e0e11", 
+    autoHideMenuBar: true,
   });
 
+  // 👇 Ye rahi aapki nayi working link (No 404 Error)
   mainWindow.loadURL('https://rgamerai.vercel.app');
 
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
@@ -15,4 +21,7 @@ function createWindow() {
 }
 
 app.whenReady().then(createWindow);
-app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit(); });
+
+app.on('window-all-closed', () => { 
+  if (process.platform !== 'darwin') app.quit(); 
+});
