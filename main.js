@@ -6,7 +6,7 @@ function createWindow() {
     title: "RGAMER AI", backgroundColor: "#0e0e11", autoHideMenuBar: true,
   });
 
-  mainWindow.loadURL('https://rgamer-ai.vercel.app');
+  mainWindow.loadURL('https://rgamerai.vercel.app');
 
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
     shell.openExternal(url);
