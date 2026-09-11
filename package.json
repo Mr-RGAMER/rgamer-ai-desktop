@@ -1,0 +1,22 @@
+{
+  "name": "rgamer-ai",
+  "version": "1.0.0",
+  "description": "Intelligence for Creators & Coders",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "author": "Reyansh Verma",
+  "devDependencies": {
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.rgamer.ai",
+    "productName": "RGAMER AI",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
