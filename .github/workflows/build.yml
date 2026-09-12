@@ -9,6 +9,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 18 }
+      
+      # ⬇️ YEH NAYA MAGIC STEP HAI ICON KE LIYE ⬇️
+      - name: Download Icon
+        run: |
+          Invoke-WebRequest -Uri "https://rgamerai.vercel.app/icon.png" -OutFile "icon.png"
+      
       - run: npm install
       - run: npm run build
         env:
