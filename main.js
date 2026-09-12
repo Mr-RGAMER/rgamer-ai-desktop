@@ -1,4 +1,5 @@
 const { app, BrowserWindow, shell } = require('electron');
+const path = require('path');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -9,25 +10,21 @@ function createWindow() {
     title: "RGAMER AI", 
     backgroundColor: "#0e0e11", 
     autoHideMenuBar: true,
-    // Add webPreferences to allow Google/Firebase login
+    icon: path.join(__dirname, 'icon.png'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      webSecurity: false, // This often helps with CORS issues in OAuth popups
+      webSecurity: false,
       allowRunningInsecureContent: true
     }
   });
 
-  // URL set to your new domain
   mainWindow.loadURL('https://rgamerai.vercel.app');
 
-  // Allow new windows (important for Google Login popups!)
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
-    // If it's a Google/Firebase auth link, let the app handle it normally as a popup
     if (url.includes('google.com') || url.includes('firebaseapp.com')) {
       return { action: 'allow' }; 
     }
-    // Otherwise open in default browser (like Chrome)
     shell.openExternal(url);
     return { action: 'deny' };
   });
