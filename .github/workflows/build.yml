@@ -10,11 +10,10 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 18 }
       
-      # ⬇️ YEH NAYA MAGIC STEP HAI ICON KE LIYE ⬇️
-      - name: Download Icon
+      - name: Download R Logo Icon
         run: |
-          Invoke-WebRequest -Uri "https://rgamerai.vercel.app/icon.png" -OutFile "icon.png"
-      
+          curl -sL "https://ui-avatars.com/api/?name=R&background=0e0e11&color=06b6d4&size=256&bold=true&format=png" -o icon.png
+
       - run: npm install
       - run: npm run build
         env:
