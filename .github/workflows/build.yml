@@ -10,10 +10,6 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 18 }
       
-      - name: Download R Logo Icon
-        run: |
-          curl -sL "https://ui-avatars.com/api/?name=R&background=0e0e11&color=06b6d4&size=256&bold=true&format=png" -o icon.png
-
       - run: npm install
       - run: npm run build
         env:
